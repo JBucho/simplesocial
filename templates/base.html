@@ -14,34 +14,38 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
     <link rel="stylesheet" href="{% static "social_site/css/master.css" %}">
+    <link rel="stylesheet" href="{% static "/css/master.css" %}">
 
   </head>
   <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mynav mb-3" role="navigation" id="navbar">
-      <a class="navbar-brand" href="{% url 'home' %}"><i class="fas fa-atom"></i>Social Club</a>
+      <a class="navbar-brand mynav" href="{% url 'home' %}"><i class="fas fa-atom"></i>Social Club</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
         {% if user.is_authenticated %}
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"><a class="nav-link" href="#">Post</a></li>
-            <li class="nav-item active"><a class="nav-link" href="#">Groups</a></li>
-            <li class="nav-item active"><a class="nav-link" href="#">Create Group</a></li>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a class="nav-link" href="{% url 'posts:create' %}">Post</a></li>
+            <li class="nav-item active"><a class="nav-link" href="{% url 'groups:all' %}">Groups</a></li>
+            <li class="nav-item active"><a class="nav-link" href="{% url 'groups:create' %}">Create Group</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li class="nav-item active"><a class="nav-link" href="{% url 'accounts:logout' %}">Log Out</a></li>
+            <li class="nav-item active"><a class="btn btn-outline-danger" href="{% url 'accounts:logout' %}">Log Out</a></li>
           </ul>
+
         {% else %}
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"><a class="nav-link" href="#">Groups</a></li>
+            <li class="nav-item active"><a class="nav-link" href="{% url 'groups:all' %}">Groups</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="nav-item active"><a class="nav-link" href="{% url 'accounts:signup' %}">Sign Up</a></li>
             <li class="nav-item active"><a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'accounts:login' %}">Log In</a></li>
           </ul>
+
         {% endif %}
 
       </div>

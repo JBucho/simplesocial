@@ -9,13 +9,14 @@
             @{{ user.username }}
           </a>
         </h2>
+        <br>
       {% endif %}
-        <h2>Groups</h2>
-        <p>Welcome to the groups page!</p>
+      <h5>Welcome to the groups page!</h5>
+      <br>
     </div>
     {% if user.is_authenticated %}
       <a href="{% url 'groups:create' %}" class="btn btn-warning">
-        <span class="fa fa-plus"></span>Create New Group!
+        <span class="fa fa-plus fa-xs"></span><strong> Create New Group!</strong>
       </a>
     {% endif %}
   </div>
@@ -23,9 +24,11 @@
 
 {% block group_content %}
   <div class="col-md-8">
+    <h2 style="text-align:center;">Groups:</h2>
+
     <div class="list-group">
       {% for group in object_list %}
-        <a class="list-group-item" href="{% url 'group:single' slug=group.slug %}">
+        <a class="list-group-item" href="{% url 'groups:single' slug=group.slug %}">
           <h3 class="title list-group-item-heading">{{ group.name }}</h3>
           <div class="list-group-item-text container-fluid">
             {{ group.description_html|safe }}
