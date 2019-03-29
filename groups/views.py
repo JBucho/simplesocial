@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.views import generic
 from groups.models import Group, GroupMember
 from django.contrib import messages
+from django.db import IntegrityError
 
 from . import models
 

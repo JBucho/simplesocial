@@ -1,0 +1,11 @@
+.list-group-item {
+  word-wrap: break-word;
+}
+
+.title {
+  text-align: center;
+}
+
+.list-group-item hr {
+  width: 550px;
+}

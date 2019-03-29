@@ -4,14 +4,19 @@
   <div class="col-md-4">
     <div class="content">
       {% if user.is_authenticated %}
-        <h2>Welcome Back!
-          <a href="{% url 'posts:for_user' username=user.username %}">
-            @{{ user.username }}
-          </a>
-        </h2>
-        <br>
+      <br>
+      <br>
+        <div>
+          <h2>Welcome
+            <a href="{% url 'posts:for_user' username=user.username %}">
+              @{{ user.username }}
+            </a>!
+          </h2>
+        </div>
+      <br>
+      <br>
       {% endif %}
-      <h5>Welcome to the groups page!</h5>
+      <h5>Here is the groups list page!</h5>
       <br>
     </div>
     {% if user.is_authenticated %}
@@ -28,10 +33,16 @@
 
     <div class="list-group">
       {% for group in object_list %}
-        <a class="list-group-item" href="{% url 'groups:single' slug=group.slug %}">
-          <h3 class="title list-group-item-heading">{{ group.name }}</h3>
+
+        <div class="list-group-item">
+          <a href="{% url 'groups:single' slug=group.slug %}">
+            <h3 class="title list-group-item-heading">{{ group.name }}</h3>
+          </a>
+          <hr>
+
           <div class="list-group-item-text container-fluid">
             {{ group.description_html|safe }}
+
             <div class="row">
               <div class="col-md-4">
                 <span class='badge'>{{ group.members.count }}</span>
@@ -42,8 +53,11 @@
                 post{{ group.posts.count|pluralize}}
               </div>
             </div>
+
           </div>
-        </a>
+
+        </div>
+        <br>
       {% endfor %}
     </div>
   </div>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Social Club</title>
@@ -11,16 +11,16 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     <!-- Google fonts - Montserrat -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    {# <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> #}
 
-    <link rel="stylesheet" href="{% static "social_site/css/master.css" %}">
-    <link rel="stylesheet" href="{% static "/css/master.css" %}">
+    <link rel="stylesheet" href="{% static "/social_site/css/custom.css" %}">
+    <link rel="stylesheet" href="{% static "/css/custom.css" %}">
 
   </head>
   <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mynav mb-3" role="navigation" id="navbar">
-      <a class="navbar-brand mynav" href="{% url 'home' %}"><i class="fas fa-atom"></i>Social Club</a>
+      <a class="navbar-brand mynav" href="{% url 'home' %}"><i class="fas fa-atom"></i> Social Club</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
