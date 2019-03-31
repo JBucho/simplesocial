@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="{% static "social_site/css/bootstrap.min.css" %}">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Google fonts - Montserrat -->
-    {# <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> #}
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
     <link rel="stylesheet" href="{% static "/social_site/css/custom.css" %}">
     <link rel="stylesheet" href="{% static "/css/custom.css" %}">
@@ -26,11 +27,25 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"><a class="nav-link" href="{% url 'groups:all' %}">Groups</a></li>
+          </ul>
+          {% if request.path == '/' %}
+            <p class='navbar-text sitetitle'>Welcome to Social Club Site!</p>
+          {% elif request.path == '/groups/' %}
+            <p class='navbar-text sitetitle'>Groups List Page</p>
+          {% elif request.path == "/posts/by/"|add:user.username|add:'/' %}
+            <p class='navbar-text sitetitle'>{{ user.username }}'s posts page</p>
+          {% elif request.path == "/posts/new/" %}
+            <p class='navbar-text sitetitle'>Create new post as: {{ user.username }}</p>
+          {% elif request.path == "/groups/new/" %}
+            <p class='navbar-text sitetitle'>Create new group</p>
+          {% endif %}
 
         {% if user.is_authenticated %}
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a class="nav-link" href="{% url 'posts:create' %}">Post</a></li>
-            <li class="nav-item active"><a class="nav-link" href="{% url 'groups:all' %}">Groups</a></li>
+            <li class="nav-item active"><a class="nav-link" href="{% url 'posts:for_user' username=user.username %}">My Posts</a></li>
+            <li class="nav-item active"><a class="nav-link" href="{% url 'posts:create' %}">Create Post</a></li>
             <li class="nav-item active"><a class="nav-link" href="{% url 'groups:create' %}">Create Group</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -38,9 +53,6 @@
           </ul>
 
         {% else %}
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"><a class="nav-link" href="{% url 'groups:all' %}">Groups</a></li>
-          </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="nav-item active"><a class="nav-link" href="{% url 'accounts:signup' %}">Sign Up</a></li>
             <li class="nav-item active"><a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'accounts:login' %}">Log In</a></li>
@@ -57,6 +69,10 @@
 
       {% endblock %}
 
+      <!-- {% for pop in latest_posts %}
+        {{ pop.message }}
+
+      {% endfor %} #}-->
     </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
