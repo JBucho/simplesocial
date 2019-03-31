@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <div style="text-align: center;" class="container">
+    <img class="welcome-img" src="{% static "images/welcome.png" %}" alt="">
+    <h1>{{ user.username }}!</h1>
+  </div>
+{% endblock %}

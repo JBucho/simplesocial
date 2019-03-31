@@ -1,0 +1,40 @@
+.mycontent {
+  word-break: break-all;
+}
+
+div.media-body {
+  word-break: break-all;
+}
+
+.grouptitle {
+  text-align: center;
+}
+
+.list-group-item hr {
+  width: 550px;
+}
+
+span .groupname {
+  text-decoration: underline;
+}
+
+.sitetitle {
+    color: white !important;
+    font-size: 1.7em;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    height: 0;
+    overflow: visible;
+}
+
+.bye-bye-img {
+  max-width: 60%;
+  max-height: 60%;
+}
+
+.welcome-img {
+  padding-top: 10px;
+}

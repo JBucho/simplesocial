@@ -25,7 +25,7 @@ SECRET_KEY = '3e7#nuv5uj+$)e07m(8%+hy0w_sl0=o4@w+kdacu+m+j$a3th#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.0.21','127.0.0.1']
 
 
 # Application definition
@@ -66,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'posts.context_processors.get_latest_posts',
             ],
         },
     },
@@ -124,5 +125,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-LOGIN_REDIRECT_URL = 'test'
+LOGIN_REDIRECT_URL = 'welcome'
 LOGOUT_REDIRECT_URL = 'thanks'

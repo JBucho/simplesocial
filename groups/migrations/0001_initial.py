@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
             name='GroupMember',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('group', models.ForeignKey(on_delete='CASCADE', related_name='membership', to='groups.Group')),
+                ('group', models.ForeignKey(on_delete='CASCADE', related_name='memberships', to='groups.Group')),
                 ('user', models.ForeignKey(on_delete='CASCADE', related_name='user_groups', to=settings.AUTH_USER_MODEL)),
             ],
         ),
