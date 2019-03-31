@@ -1,15 +1,15 @@
 <div class="post media my-4 jumbotron">
-
   <div class="media-body">
-    <h6>Created by <a href="{% url 'posts:for_user' username=post.user.username %}">
-      <strong>@{{ post.user.username }}</strong>
-    </a></h6>
-    <hr>
 
-    <span class="post-message">{{ post.message_html|safe}}</span>
+    <a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">
+      <span class="post-message">
+        <p>{{ post.message|truncatechars:220 }}</p>
+      </span>
+    </a>
     <span class="media-footer text-muted"><time class="time">POSTED:
       <a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">
-      {{ post.created_at | date:'d M Y H:m'}}</a></time>
+      {{ post.created_at | date:'d M Y H:m'}}
+      </a></time>
       IN GROUP: <a href="{% url 'groups:single' slug=post.group.slug %}">
       {{ post.group.name }}</a>
     </span>
