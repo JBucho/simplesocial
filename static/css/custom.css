@@ -1,3 +1,12 @@
+.mybrand {
+  padding-top: 2px;
+  font-size: 1.8em;
+}
+.navbar .nav-link {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3em;
+}
+
 .mycontent {
   word-break: break-all;
 }
@@ -20,7 +29,8 @@ span .groupname {
 
 .sitetitle {
     color: white !important;
-    font-size: 1.7em;
+    font-family: 'Audiowide', cursive;
+    font-size: 2em;
     position: absolute;
     width: 100%;
     top: 0;
@@ -30,6 +40,10 @@ span .groupname {
     overflow: visible;
 }
 
+.post-message {
+  font-size: 1.6em;
+  font-family: 'Kalam', cursive;
+}
 .bye-bye-img {
   max-width: 60%;
   max-height: 60%;
