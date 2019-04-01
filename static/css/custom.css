@@ -13,13 +13,13 @@
 }
 
 .right-bar .jumbotron{
-  text-align: justify;
   padding: 0.5rem 1rem;
   background-color: #D8EBFF;
   margin-bottom: 1rem;
 }
 
 .mybrand {
+  color: #4caf50 !important;
   padding-top: 2px;
   font-size: 1.8em;
 }
@@ -31,9 +31,6 @@
 .right-bar a {
   text-decoration: none;
   color: black;
-}
-
-div.media-body {
 }
 
 .grouptitle {
