@@ -1,0 +1,9 @@
+<div class="right-bar">
+  <h4 style="text-align: center;">LATEST POSTS:</h4>
+  <hr>
+  {% for post in latest_posts %}
+    {{ post.message_html|truncatechars:100|safe }}
+    <p>posted by {{ post.user.username }}</p>
+    <br>
+  {% endfor %}
+</div>
