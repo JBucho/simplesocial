@@ -8,6 +8,17 @@
   display: flex;
 }
 
+.jumbotron {
+    padding: 2rem 1rem;
+}
+
+.right-bar .jumbotron{
+  text-align: justify;
+  padding: 0.5rem 1rem;
+  background-color: #D8EBFF;
+  margin-bottom: 1rem;
+}
+
 .mybrand {
   padding-top: 2px;
   font-size: 1.8em;
@@ -17,13 +28,12 @@
   font-size: 1.3em;
 }
 
-a:link {
+.right-bar a {
   text-decoration: none;
+  color: black;
 }
 
-
 div.media-body {
-  word-wrap: break-word;
 }
 
 .grouptitle {
@@ -32,10 +42,6 @@ div.media-body {
 
 .list-group-item hr {
   width: 550px;
-}
-
-span .groupname {
-  text-decoration: underline;
 }
 
 .sitetitle {

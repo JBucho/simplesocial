@@ -3,7 +3,7 @@
 
 {% block content %}
   <div class="jumbotron">
-    <h4>Create a new group!</h4>
+    <h4 style="text-align: center;">Create a new group!</h4>
 
     <form id="groupForm" action="{% url 'groups:create' %}" method="post">
       {% csrf_token %}

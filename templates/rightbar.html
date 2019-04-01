@@ -2,8 +2,15 @@
   <h4 style="text-align: center;">LATEST POSTS:</h4>
   <hr>
   {% for post in latest_posts %}
-    {{ post.message_html|truncatechars:100|safe }}
-    <p>posted by {{ post.user.username }}</p>
-    <br>
+      <div class="jumbotron postlink">
+        <a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">
+          {{ post.message_html|truncatechars:120|safe }}
+        </a>
+        <p class="text-muted">posted by
+          <a href="{% url 'posts:for_user' username=post.user.username %}">
+            <span style="color:green;">@{{ post.user.username }}</span>
+          </a>
+        </p>
+      </div>
   {% endfor %}
 </div>
