@@ -1,4 +1,25 @@
+.mycontent {
+  word-wrap: break-word;
+  max-width: 95%;
+  margin: auto;
+}
+
+.myrow {
+  display: flex;
+}
+
+.jumbotron {
+    padding: 2rem 1rem;
+}
+
+.right-bar .jumbotron{
+  padding: 0.5rem 1rem;
+  background-color: #D8EBFF;
+  margin-bottom: 1rem;
+}
+
 .mybrand {
+  color: #4caf50 !important;
   padding-top: 2px;
   font-size: 1.8em;
 }
@@ -7,12 +28,9 @@
   font-size: 1.3em;
 }
 
-.mycontent {
-  word-break: break-all;
-}
-
-div.media-body {
-  word-break: break-all;
+.right-bar a {
+  text-decoration: none;
+  color: black;
 }
 
 .grouptitle {
@@ -21,10 +39,6 @@ div.media-body {
 
 .list-group-item hr {
   width: 550px;
-}
-
-span .groupname {
-  text-decoration: underline;
 }
 
 .sitetitle {
@@ -41,6 +55,8 @@ span .groupname {
 }
 
 .post-message {
+  color: black;
+  text-decoration: none !important;
   font-size: 1.6em;
   font-family: 'Kalam', cursive;
 }
