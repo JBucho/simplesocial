@@ -20,6 +20,8 @@
       <br>
     </div>
     {% if user.is_authenticated %}
+      <h5>Join the group with topic of your interest or create new one.</h5>
+      <br>
       <a href="{% url 'groups:create' %}" class="btn btn-warning">
         <span class="fa fa-plus fa-xs"></span><strong> Create New Group!</strong>
       </a>

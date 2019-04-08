@@ -19,7 +19,7 @@
   </head>
   <body>
   <div class="paige-container">
-
+    <!-- NAVBAR -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mynav mb-3"
     role="navigation" id="navbar">
       <a class="navbar-brand mybrand" href="{% url 'home' %}">
@@ -38,6 +38,8 @@
               <a class="nav-link" href="{% url 'groups:all' %}">Groups</a>
             </li>
           </ul>
+
+          <!-- display actual site "title/header" -->
           {% if request.path == '/' %}
             <p class='navbar-text sitetitle'>Welcome to Social Club Site!</p>
           {% elif request.path == '/groups/' %}
@@ -50,6 +52,7 @@
             <p class='navbar-text sitetitle'>Create new group</p>
           {% endif %}
 
+        <!-- navbar for authenticated user -->
         {% if user.is_authenticated %}
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
@@ -87,18 +90,23 @@
       </div>
     </nav>
 
+    <!-- site content -->
     <div class="mycontent">
       <div class="myrow">
+
+        <!-- left "side bar" -->
         <div class="col leftcol">
 
         </div>
 
+        <!-- main content -->
         <div class="col-8">
           {% block content %}
 
           {% endblock %}
         </div>
 
+        <!-- right "side bar" -->
         <div class="col rightcol">
           {% block right_bar %}
 
@@ -107,6 +115,8 @@
 
       </div>
     </div>
+
+    <!-- FOOTER -->
     <footer id="footer">
       <div class="footer-text">
         Copyright © 2019 Jakub Buchocki
@@ -114,6 +124,8 @@
     </footer>
 
   </div>
+
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="{% static "social_site/js/bootstrap.min.js" %}"></script>

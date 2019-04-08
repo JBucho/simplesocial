@@ -16,6 +16,40 @@ body {
   margin-top: 90px;
 }
 
+.welcome-post  h4, h5 {
+  margin: auto;
+  text-align: center;
+}
+
+.welcome-text {
+  font-size: 1.1em;
+  margin: auto;
+  max-width: 85%;
+  text-align: justify;
+}
+
+.techs-list {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 5px;
+  padding-top: 10px;
+}
+
+.techs-list-badge {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  padding: 10px;
+}
+
+.techs-list-badge-img {
+  align-self: center;
+}
+
 .myrow {
   display: flex;
 }
@@ -60,10 +94,8 @@ body {
   color: #4caf50;
 }
 
-.row .membercount {
-  vertical-align: baseline;
-  line-height: 100px;
-  background-color: grey;
+.list-group-item {
+  background-color: inherit;
 }
 
 .list-group-item hr {
@@ -112,14 +144,6 @@ body {
   font-size: 1.1em;
   font-weight: 300;
 }
-.bye-bye-img {
-  max-width: 60%;
-  max-height: 60%;
-}
-
-.welcome-img {
-  padding-top: 10px;
-}
 
 h2 a{
   color: red;
@@ -127,4 +151,21 @@ h2 a{
 
 span .groupname {
   text-decoration: underline;
+}
+
+.djangoimg {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-width: 70%;
+  max-height: 70%;
+}
+
+.bye-bye-img {
+  max-width: 60%;
+  max-height: 60%;
+}
+
+.welcome-img {
+  padding-top: 10px;
 }

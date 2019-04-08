@@ -1,8 +1,62 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 
-  <h1 style="text-align:center">Welcome to Social Club Site!</h1>
+  <div class="welcome-post">
+    <img class="djangoimg" src="{% static "images\python_django.png" %}"
+    alt="django_img">
+    <hr>
+    <div class="jumbotron welcome-text">
+      <h4>Welcome on my Django project site.</h4>
+      <br>
+      <p>
+          This site was created to learn Django framework and other skills realted
+        to web development. It will be developed further, also just for
+        practice purpose.
+      </p>
+
+      <p>In general, this site allows you to:</p>
+      <div class="row">
+        <div class="col-4">
+          <div class="list-group" id="list-tab" role="tablist">
+            <a class="list-group-item list-group-item-action active" data-toggle="list" href="#list-home">Create User</a>
+            <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-profile">View/Join/Create Group</a>
+            <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-messages">Create/Delete Posts</a>
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="list-home">{{ user }}</div>
+            <div class="tab-pane fade" id="list-profile">{{ group }}</div>
+            <div class="tab-pane fade" id="list-messages">{{ posts }}</div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <h5 class="techs">Technologies used to create this site:</h5>
+      <div class="techs-list">
+        <div class="techs-list-badge">
+          <img class="techs-list-badge-img" src="{% static "images\tech-badges\django.png" %}" alt="">
+        </div>
+        <div class="techs-list-badge">
+          <img class="techs-list-badge-img" src="{% static "\images\tech-badges\python.png" %}" alt="">
+        </div>
+        <div class="techs-list-badge">
+          <img class="techs-list-badge-img" src="{% static "\images\tech-badges\html.png" %}" alt="">
+        </div>
+        <div class="techs-list-badge">
+          <img class="techs-list-badge-img" src="{% static "\images\tech-badges\css.png" %}" alt="">
+        </div>
+        <div class="techs-list-badge">
+          <img class="techs-list-badge-img" src="{% static "\images\tech-badges\Git.png" %}" alt="">
+        </div>
+        <div class="techs-list-badge">
+          <img class="techs-list-badge-img" src="{% static "\images\tech-badges\sqlite.png" %}" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
 
 {% endblock %}
 

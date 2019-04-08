@@ -6,7 +6,7 @@
     <h1 class="grouptitle">This is <span class="groupname">{{ group.name }}</span> group!</h1>
     <br>
     <div class="container">
-      <div class="row membercount justify-content-center">
+      <div class="row justify-content-center">
         {% if user in group.members.all %}
           <a href="{% url 'groups:leave' slug=group.slug %}"
           class="btn btn-lg btn-warning">
