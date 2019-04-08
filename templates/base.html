@@ -14,13 +14,13 @@
     <!-- Google fonts - Montserrat, ZCOOL XiaoWei -->
     <link href="https://fonts.googleapis.com/css?family=Audiowide|Kalam:300|Montserrat" rel="stylesheet">
 
-    <link rel="stylesheet" href="{% static "/social_site/css/custom.css" %}">
     <link rel="stylesheet" href="{% static "/css/custom.css" %}">
 
   </head>
   <body>
+  <div class="paige-container">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mynav mb-3"
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mynav mb-3"
     role="navigation" id="navbar">
       <a class="navbar-brand mybrand" href="{% url 'home' %}">
         <i class="fas fa-atom"></i> Social Club
@@ -45,8 +45,7 @@
           {% elif request.path == "/posts/by/"|add:user.username|add:'/' %}
             <p class='navbar-text sitetitle'>{{ user.username }}'s posts page</p>
           {% elif request.path == "/posts/new/" %}
-            <p class='navbar-text sitetitle'>Create new post as:
-                                                        {{ user.username }}</p>
+            <p class='navbar-text sitetitle'>Create new post</p>
           {% elif request.path == "/groups/new/" %}
             <p class='navbar-text sitetitle'>Create new group</p>
           {% endif %}
@@ -102,13 +101,19 @@
 
         <div class="col rightcol">
           {% block right_bar %}
-            
+
           {% endblock %}
         </div>
 
       </div>
     </div>
+    <footer id="footer">
+      <div class="footer-text">
+        Copyright © 2019 Jakub Buchocki
+      </div>
+    </footer>
 
+  </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="{% static "social_site/js/bootstrap.min.js" %}"></script>

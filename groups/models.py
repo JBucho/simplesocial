@@ -11,7 +11,7 @@ register = template.Library()
 
 # Create your models here.
 class Group(models.Model):
-    name = models.CharField(verbose_name='Group name', max_length=255, unique=True)
+    name = models.CharField(verbose_name='Group name', max_length=55, unique=True)
     slug = models.SlugField(allow_unicode=True, unique=True)
     description = models.TextField(blank=True, default='')
     description_html = models.TextField(editable=False, default='', blank=True)

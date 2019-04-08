@@ -2,10 +2,11 @@
 
 {% block pregroup %}
   <div class="container">
-    <h1>This is <span class="groupname">{{ group.name }} group!</span></h1>
 
+    <h1 class="grouptitle">This is <span class="groupname">{{ group.name }}</span> group!</h1>
+    <br>
     <div class="container">
-      <div class="row">
+      <div class="row membercount justify-content-center">
         {% if user in group.members.all %}
           <a href="{% url 'groups:leave' slug=group.slug %}"
           class="btn btn-lg btn-warning">
@@ -21,11 +22,11 @@
 
   </div>
 {% endblock %}
-
+<hr>
 {% block group_content %}
-  <div class="col-md-8 mt-5">
+  <div class="mt-5">
     {% if group.posts.count == 0 %}
-      <h2>No posts in this group yet!</h2>
+      <h2 class="nopost">No posts in this group yet!</h2>
     {% else %}
       {% for post in group.posts.all %}
         {% include "posts/_post.html" %}

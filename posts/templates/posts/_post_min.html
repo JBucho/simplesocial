@@ -18,8 +18,8 @@
       {% if user.is_authenticated and post.user == user %}
         <a href="{% url 'posts:delete' pk=post.pk %}" title="delete"
         class="btn btn-outline-danger mt-2">
-        <span class="fa fa-remove text-danger" aria-hidden="true"></span>
-        <span class="text-danger icon-label">Delete</span>
+        <span class="fa fa-remove" aria-hidden="true"></span>
+        <span class="icon-label">Delete</span>
         </a>
       {% endif %}
     </div>

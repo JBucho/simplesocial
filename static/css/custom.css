@@ -1,11 +1,29 @@
+.paige-container {
+  position: absolute;
+  min-height: 100vh;
+  min-width: 100%;
+}
+
+body {
+  height: 100%;
+}
+
 .mycontent {
   word-wrap: break-word;
   max-width: 95%;
   margin: auto;
+  margin-bottom: 50px;
+  margin-top: 90px;
 }
 
 .myrow {
   display: flex;
+}
+
+.postslist {
+  word-wrap: break-word;
+  max-width: 95%;
+  margin: auto;
 }
 
 .jumbotron {
@@ -33,8 +51,19 @@
   color: black;
 }
 
-.grouptitle {
+.grouptitle, .nopost {
   text-align: center;
+}
+
+.groupname {
+  text-align: center;
+  color: #4caf50;
+}
+
+.row .membercount {
+  vertical-align: baseline;
+  line-height: 100px;
+  background-color: grey;
 }
 
 .list-group-item hr {
@@ -54,11 +83,34 @@
     overflow: visible;
 }
 
+.post {
+  max-width: 80%;
+  margin: auto;
+}
 .post-message {
   color: black;
   text-decoration: none !important;
   font-size: 1.6em;
   font-family: 'Kalam', cursive;
+}
+
+#footer {
+  display: block;
+  width: 100%;
+  height: 30px;
+  bottom: 0;
+  position: absolute;
+  text-align: center;
+  background-color: black;
+  line-height: 30px;
+}
+
+.footer-text {
+  word-spacing: 0.1em;
+  letter-spacing: 0.1em;
+  color: white;
+  font-size: 1.1em;
+  font-weight: 300;
 }
 .bye-bye-img {
   max-width: 60%;
@@ -67,4 +119,12 @@
 
 .welcome-img {
   padding-top: 10px;
+}
+
+h2 a{
+  color: red;
+}
+
+span .groupname {
+  text-decoration: underline;
 }

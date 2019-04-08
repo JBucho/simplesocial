@@ -34,19 +34,19 @@
 
         <div class="list-group-item">
           <a href="{% url 'groups:single' slug=group.slug %}">
-            <h3 class="grouptitle list-group-item-heading">{{ group.name }}</h3>
+            <h3 class="groupname list-group-item-heading">{{ group.name }}</h3>
           </a>
           <hr>
 
           <div class="list-group-item-text container-fluid">
             {{ group.description_html|safe }}
 
-            <div class="row">
-              <div class="col-md-4">
-                <span class='badge badge-pill badge-primary'>{{ group.members.count }}</span>
+            <div class="row justify-content-center">
+              <div class="col-md-4 center-badge text-center">
+                <span class='badge badge-pill badge-secondary'>{{ group.members.count }}</span>
                 member {{ group.members.count|pluralize }}
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4 center-badge text-center">
                 <span class="badge badge-pill badge-secondary">{{ group.posts.count }}</span>
                 post{{ group.posts.count|pluralize}}
               </div>
