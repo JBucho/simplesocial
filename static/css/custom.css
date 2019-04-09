@@ -28,6 +28,15 @@ body {
   text-align: justify;
 }
 
+.sitescope .col-8 {
+  word-wrap: break-word;
+  padding: 18px;
+  border: 1.5px solid;
+  border-radius: .5rem;
+  border-color: #007bff;
+  align-content: center;
+}
+
 .techs-list {
   display: flex;
   width: 100%;
