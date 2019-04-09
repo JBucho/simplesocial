@@ -69,6 +69,14 @@ body {
   margin: auto;
 }
 
+div > div.mt-5 {
+  margin: auto;
+}
+
+.nopost {
+  text-align: center;
+}
+
 .jumbotron {
     padding: 2rem 1rem;
 }
@@ -142,7 +150,7 @@ body {
   bottom: 0;
   position: absolute;
   text-align: center;
-  background-color: black;
+  background-color: #212529;
   line-height: 30px;
 }
 
