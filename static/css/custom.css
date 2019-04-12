@@ -24,17 +24,27 @@ body {
 .welcome-text {
   font-size: 1.1em;
   margin: auto;
-  max-width: 85%;
+  max-width: 90%;
   text-align: justify;
 }
 
+.row.capabilites {
+  border: 1.5px solid;
+  border-radius: .5rem;
+  border-color: #092E20;
+}
+
+.list-group-item.active {
+  background-color: #092E20;
+  border-color: #092E20;
+}
 .sitescope .col-8 {
   word-wrap: break-word;
   padding: 18px;
-  border: 1.5px solid;
-  border-radius: .5rem;
-  border-color: #007bff;
   align-content: center;
+}
+.row.capabilites > div.col-4 {
+  padding-left: 0;
 }
 
 .techs-list {
@@ -92,6 +102,7 @@ div > div.mt-5 {
   padding-top: 2px;
   font-size: 1.8em;
 }
+
 .navbar .nav-link {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.3em;
