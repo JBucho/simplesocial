@@ -55,9 +55,11 @@
             <p class='navbar-text sitetitle'>Create new post</p>
           {% elif request.path == "/groups/new/" %}
             <p class='navbar-text sitetitle'>Create new group</p>
+          {% elif "/groups/posts/in/" in request.path %}
+            <p class='navbar-text sitetitle'>Group Page</p>
           {% endif %}
 
-        <!-- navbar for authenticated user -->
+          <!-- navbar for authenticated user -->
           {% if user.is_authenticated %}
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">

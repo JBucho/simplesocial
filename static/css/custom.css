@@ -1,12 +1,54 @@
+body {
+  height: 100%;
+}
+
+h2 a{
+  color: red;
+}
+
+div > div.mt-5 {
+  margin: auto;
+}
+
+span .groupname {
+  text-decoration: underline;
+}
+
+.jumbotron {
+    padding: 2rem 1rem;
+}
+
 .paige-container {
   position: absolute;
   min-height: 100vh;
   min-width: 100%;
 }
 
-body {
-  height: 100%;
+/* Navbar styling */
+.mybrand {
+  color: #4caf50 !important;
+  padding-top: 2px;
+  font-size: 1.8em;
 }
+
+.navbar .nav-link {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3em;
+}
+
+.sitetitle {
+  color: white !important;
+  font-family: 'Audiowide', cursive;
+  font-size: 2em;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  text-align: center;
+  height: 0;
+  overflow: visible;
+}
+/* -------------- */
 
 .mycontent {
   word-wrap: break-word;
@@ -16,9 +58,34 @@ body {
   margin-top: 90px;
 }
 
+.myrow {
+  display: flex;
+}
+
+/* Right "sidebar" styling */
+.right-bar .jumbotron{
+  padding: 0.5rem 1rem;
+  background-color: #D8EBFF;
+  margin-bottom: 1rem;
+}
+
+.right-bar a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Homepage styling (index.html) */
 .welcome-post  h4, h5 {
   margin: auto;
   text-align: center;
+}
+
+.djangoimg {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 80%;
+  height: 80%;
 }
 
 .welcome-text {
@@ -34,10 +101,6 @@ body {
   border-color: #092E20;
 }
 
-.list-group-item.active {
-  background-color: #092E20;
-  border-color: #092E20;
-}
 .sitescope .col-8 {
   word-wrap: break-word;
   padding: 18px;
@@ -45,6 +108,11 @@ body {
 }
 .row.capabilites > div.col-4 {
   padding-left: 0;
+}
+
+.list-group-item.active {
+  background-color: #092E20;
+  border-color: #092E20;
 }
 
 .techs-list {
@@ -67,51 +135,9 @@ body {
 
 .techs-list-badge-img {
   align-self: center;
+  max-width: 100%;
 }
-
-.myrow {
-  display: flex;
-}
-
-.postslist {
-  word-wrap: break-word;
-  max-width: 95%;
-  margin: auto;
-}
-
-div > div.mt-5 {
-  margin: auto;
-}
-
-.nopost {
-  text-align: center;
-}
-
-.jumbotron {
-    padding: 2rem 1rem;
-}
-
-.right-bar .jumbotron{
-  padding: 0.5rem 1rem;
-  background-color: #D8EBFF;
-  margin-bottom: 1rem;
-}
-
-.mybrand {
-  color: #4caf50 !important;
-  padding-top: 2px;
-  font-size: 1.8em;
-}
-
-.navbar .nav-link {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.3em;
-}
-
-.right-bar a {
-  text-decoration: none;
-  color: black;
-}
+/* --------------------------- */
 
 .grouptitle, .nopost {
   text-align: center;
@@ -130,23 +156,18 @@ div > div.mt-5 {
   width: 550px;
 }
 
-.sitetitle {
-    color: white !important;
-    font-family: 'Audiowide', cursive;
-    font-size: 2em;
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    text-align: center;
-    height: 0;
-    overflow: visible;
+.postslist {
+  word-wrap: break-word;
+  max-width: 95%;
+  margin: auto;
 }
 
+/* Posts view styling */
 .post {
   max-width: 80%;
   margin: auto;
 }
+
 .post-message {
   color: black;
   text-decoration: none !important;
@@ -154,6 +175,7 @@ div > div.mt-5 {
   font-family: 'Kalam', cursive;
 }
 
+/* Footer styling */
 #footer {
   display: block;
   width: 100%;
@@ -172,22 +194,7 @@ div > div.mt-5 {
   font-size: 1.1em;
   font-weight: 300;
 }
-
-h2 a{
-  color: red;
-}
-
-span .groupname {
-  text-decoration: underline;
-}
-
-.djangoimg {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  max-width: 70%;
-  max-height: 70%;
-}
+/* ---------------- */
 
 .bye-bye-img {
   max-width: 60%;
