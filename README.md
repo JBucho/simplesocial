@@ -6,7 +6,7 @@ It allows visitors to:
 - create user account,
 - see the groups and posts in it.
 
-Groups might be created for certain topics their content is about.
+Groups might be created for certain topics their content would be about.
 
 After signing in User is allowed to:
 - join/leave the groups of User's interests,
