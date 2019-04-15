@@ -33,18 +33,40 @@ e.g., using Conda environments
 conda create -n newenv pip
 ```
 
+Go to project directory:
+```sh
+cd .../simplesocial
+```
+
+
 Activate your newly created environment and run:
 ```sh
 pip install -r requirements.txt
 ```
 
 Once installation of the dependencies is finished:
+NOTE: There is not `db.sqlite3` file attached, so what is needed to do next is to make migration.
 
+```sh
+python manage.py migrate
+```
+During migration there will be .secret_key file created.
+This file will be storing your unique SECRET_KEY value to use it in settings.py
+
+
+(This step will let you to Log In without going through "Sign Up" form and will create
+account with administrator privileges)
+Create superuser: 
+```sh
+python manage.py createsuperuser
+```
+
+After having superuser created the last step is to runserver:
 ```sh
 python manage.py runserver
 ```
 
-The last thing is to open `http://127.0.0.1:8000/` in your browser.
+Only thing left to do is to open `http://127.0.0.1:8000/` in your browser.
 
 ## License
 [MIT]https://github.com/JBucho/simplesocial/blob/master/LICENSE
