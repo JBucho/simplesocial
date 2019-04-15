@@ -45,6 +45,7 @@ pip install -r requirements.txt
 ```
 
 Once installation of the dependencies is finished:
+
 NOTE: There is not `db.sqlite3` file attached, so what is needed to do next is to make migration.
 
 ```sh
@@ -56,7 +57,7 @@ This file will be storing your unique SECRET_KEY value to use it in settings.py
 
 (This step will let you to Log In without going through "Sign Up" form and will create
 account with administrator privileges)
-Create superuser: 
+Create superuser:
 ```sh
 python manage.py createsuperuser
 ```
