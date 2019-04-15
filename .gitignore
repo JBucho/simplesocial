@@ -142,7 +142,7 @@ dmypy.json
 # Translations
 
 # Django stuff:
-
+.secret_key
 # Flask stuff:
 
 # Scrapy stuff:

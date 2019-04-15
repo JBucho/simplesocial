@@ -20,7 +20,18 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
+# SECRET_KEY = os.environ['SECRET_KEY']
+def get_secret_key():
+    with open(os.path.join(BASE_DIR, 'social_site', '.secret_key'), 'r') as sk:
+        key = sk.read()
+    return key
+
+try:
+    SECRET_KEY = get_secret_key()
+except FileNotFoundError:
+    from .key_gen import generate_secret_key
+    generate_secret_key()
+    SECRET_KEY = get_secret_key()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True  # True on purpose (due to static files loading)
