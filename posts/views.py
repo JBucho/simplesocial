@@ -82,23 +82,24 @@ def add_comment_to_post(request, pk, **kwargs):
             comment.post = post
             comment.author = request.user
             comment.save()
+            return redirect('posts:single', username=post.user, pk=post.pk)
     else:
         form = forms.CommentForm()
     return render(request, 'posts/comment_form.html',{'form': form})
 
-@login_required
-def comment_approve(request, pk):
-    comment = get_object_or_404(models.Comment, pk=pk)
-    comment.approve()
-    return redirect('posts:single', kwargs={
-                                        'username':comment.post.user.username,
-                                        'pk':comment.post.pk
-                                        }
-                                     )
-
-@login_required
-def comment_remove(request, pk):
-    comment = get_object_or_404(models.Comment, pk=pk)
-    post_pk = comment.post.pk
-    comment.delete()
-    return redirect('post_detail', pk=post_pk)
+# @login_required
+# def comment_approve(request, pk):
+#     comment = get_object_or_404(models.Comment, pk=pk)
+#     comment.approve()
+#     return redirect('posts:single', kwargs={
+#                                         'username':comment.post.user.username,
+#                                         'pk':comment.post.pk
+#                                         }
+#                                      )
+#
+# @login_required
+# def comment_remove(request, pk):
+#     comment = get_object_or_404(models.Comment, pk=pk)
+#     post_pk = comment.post.pk
+#     comment.delete()
+#     return redirect('post_detail', pk=post_pk)
