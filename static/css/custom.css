@@ -28,7 +28,7 @@ span .groupname {
 .mybrand {
   color: #4caf50 !important;
   padding-top: 2px;
-  font-size: 1.8em;
+  font-size: 1.6em;
 }
 
 .navbar .nav-link {
@@ -39,7 +39,7 @@ span .groupname {
 .sitetitle {
   color: white !important;
   font-family: 'Audiowide', cursive;
-  font-size: 2em;
+  font-size: 1.8em;
   position: absolute;
   width: 100%;
   top: 0;
