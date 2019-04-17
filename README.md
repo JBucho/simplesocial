@@ -12,6 +12,7 @@ After signing in User is allowed to:
 - join/leave the groups of User's interests,
 - create new group with unique name if the group of certain interest doesn't exist
 - write new posts in group of choice
+- read/write comments to post
 
 Visit: https://jbb.pythonanywhere.com/ to check it by yourself
 
