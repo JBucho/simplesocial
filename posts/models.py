@@ -63,3 +63,5 @@ class Comment(models.Model):
                             'pk':self.post.pk
                             }
                       )
+    class Meta:
+        ordering = ['created_at']
