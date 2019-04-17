@@ -29,9 +29,39 @@ class Post(models.Model):
                         kwargs={
                             'username':self.user.username,
                             'pk':self.pk
-                        }
-                    )
+                            }
+                      )
 
     class Meta:
         ordering = ['-created_at']
         unique_together = ['user', 'message']
+
+
+class Comment(models.Model):
+    author = models.ForeignKey(User, related_name='comments', on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now=True)
+    text = models.TextField()
+    text_html = models.TextField(editable=False)
+    post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
+    approved_comment = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.text
+
+    def save(self, *args, **kwargs):
+        self.text_html = misaka.html(self.text)
+        super().save(*args, **kwargs)
+
+    def approve(self):
+        self.approved_comment = True
+        self.save()
+
+    def get_absolute_url(self):
+        return reverse('posts:single',
+                        kwargs={
+                            'username':Post.user.username,
+                            'pk':self.post.pk
+                            }
+                      )
+    class Meta:
+        ordering = ['created_at']

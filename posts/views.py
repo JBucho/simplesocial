@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.http import Http404
@@ -69,3 +70,36 @@ class DeletePost(LoginRequiredMixin, SelectRelatedMixin, generic.DeleteView):
     def delete(self, *args, **kwargs):
         messages.success(self.request, 'Post Deleted')
         return super().delete(*args,**kwargs)
+
+# Comments views:
+@login_required
+def add_comment_to_post(request, pk, **kwargs):
+    post = get_object_or_404(models.Post, pk=pk)
+    if request.method == 'POST':
+        form = forms.CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.author = request.user
+            comment.save()
+            return redirect('posts:single', username=post.user, pk=post.pk)
+    else:
+        form = forms.CommentForm()
+    return render(request, 'posts/comment_form.html',{'form': form})
+
+# @login_required
+# def comment_approve(request, pk):
+#     comment = get_object_or_404(models.Comment, pk=pk)
+#     comment.approve()
+#     return redirect('posts:single', kwargs={
+#                                         'username':comment.post.user.username,
+#                                         'pk':comment.post.pk
+#                                         }
+#                                      )
+#
+# @login_required
+# def comment_remove(request, pk):
+#     comment = get_object_or_404(models.Comment, pk=pk)
+#     post_pk = comment.post.pk
+#     comment.delete()
+#     return redirect('post_detail', pk=post_pk)
