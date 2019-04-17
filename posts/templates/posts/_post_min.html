@@ -12,7 +12,9 @@
       </a></time>
       | IN GROUP: <a href="{% url 'groups:single' slug=post.group.slug %}">
       {{ post.group.name }}</a>
-      <span class="post-comments-count"> | COMMENTS: {{ post.comments.count }}</span>
+      <span class="post-comments-count">
+        | COMMENTS: {{ post.comments.count }}
+      </span>
     </span>
 
 

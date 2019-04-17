@@ -15,7 +15,7 @@ span .groupname {
 }
 
 .jumbotron {
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
 }
 
 .paige-container {
@@ -174,7 +174,20 @@ span .groupname {
   font-size: 1.6em;
   font-family: 'Kalam', cursive;
 }
+/* Comments styling */
+.container.comments {
+  max-width: 75%;
+}
 
+.jumbotron.comment {
+  background-color: #D9F9EA;
+}
+
+.btn.add-comment {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
 /* Footer styling */
 #footer {
   display: block;
