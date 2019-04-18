@@ -78,6 +78,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'posts.context_processors.get_latest_posts',
+                'posts.context_processors.get_popular_posts',
+                'groups.context_processors.get_popular_groups',
             ],
         },
     },
