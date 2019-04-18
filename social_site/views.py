@@ -28,3 +28,6 @@ class WelcomePage(TemplateView):
 
 class ThanksPage(TemplateView):
     template_name = 'thanks.html'
+
+class ConnectFour(TemplateView):
+    template_name = 'ConnectFour.html'
