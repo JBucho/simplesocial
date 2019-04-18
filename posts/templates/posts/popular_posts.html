@@ -1,0 +1,13 @@
+<div class="left-bar">
+  <h4 style="text-align: center;">POPULAR POSTS:</h4>
+  <hr>
+
+  {% for post in popular_posts %}
+    <ul>
+      <li><a href="{% url "connectfour" %}">{{ post.message_html|truncatechars:20|safe }}</a>
+        <p>comments: {{ post.comments.count }}</p>
+      </li>
+    </ul>
+  {% endfor %}
+
+</div>
