@@ -1,0 +1,13 @@
+<div class="left-bar">
+  <h4 style="text-align: center;">POPULAR GROUPS:</h4>
+  <hr>
+
+  {% for group in popular_groups %}
+    <ul>
+      <li><a href="{% url "connectfour" %}">{{ group.name }}</a>
+        <p>members: {{ group.members.count }}</p>
+      </li>
+    </ul>
+  {% endfor %}
+
+</div>
