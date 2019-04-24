@@ -3,11 +3,14 @@
   <hr>
 
   {% for group in popular_groups %}
-    <ul>
-      <li><a href="{% url "connectfour" %}">{{ group.name }}</a>
+    <div class="jumbotron popular-groups">
+      <a href="{% url 'groups:single' slug=group.slug %}">{{ group.name }}</a>
+      <hr>
+      <span class="text-muted popular">
         <p>members: {{ group.members.count }}</p>
-      </li>
-    </ul>
+        <p>posts: {{ group.posts.count }}</p>
+      </span>
+    </div>
   {% endfor %}
 
 </div>

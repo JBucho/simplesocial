@@ -42,7 +42,7 @@
 
           <!-- display actual site "title/header" -->
           {% if request.path == '/' %}
-            <p class='navbar-text sitetitle'>Welcome to Social Club Site!</p>
+            <p class='navbar-text sitetitle'>Welcome to Social Club!</p>
           {% elif request.path == '/groups/' %}
             <p class='navbar-text sitetitle'>Groups List Page</p>
           {% elif request.path == "/posts/by/"|add:user.username|add:'/' %}

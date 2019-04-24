@@ -3,11 +3,14 @@
   <hr>
 
   {% for post in popular_posts %}
-    <ul>
-      <li><a href="{% url "connectfour" %}">{{ post.message_html|truncatechars:20|safe }}</a>
-        <p>comments: {{ post.comments.count }}</p>
-      </li>
-    </ul>
+    <div class="jumbotron">
+      <a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{ post.message_html|truncatechars:60|safe }}</a>
+        <hr>
+        <span class="text-muted popular">
+          <p>comments: {{ post.comments.count }}</p>
+          <p>author: {{ post.user.username }}</p>
+        </span>
+    </div>
   {% endfor %}
 
 </div>

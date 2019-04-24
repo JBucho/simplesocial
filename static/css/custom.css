@@ -74,6 +74,21 @@ span .groupname {
   color: black;
 }
 
+/* Left "sidebar" styling */
+.left-bar .jumbotron{
+  padding: 0.5rem 1rem;
+  background-color: #D9F9EA;
+  margin-bottom: 1rem;
+}
+
+.left-bar a {
+  text-decoration: none;
+  color: black;
+}
+
+span.popular > p {
+  margin-bottom: 0;
+}
 /* Homepage styling (index.html) */
 .welcome-post  h4, h5 {
   margin: auto;
@@ -153,7 +168,7 @@ span .groupname {
 }
 
 .list-group-item hr {
-  width: 550px;
+  width: 95%;
 }
 
 .postslist {
