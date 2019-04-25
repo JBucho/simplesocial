@@ -7,19 +7,25 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('groups', '0001_initial'),
-    ]
+    dependencies = [("groups", "0001_initial")]
 
     operations = [
         migrations.AlterField(
-            model_name='groupmember',
-            name='group',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='memberships', to='groups.Group'),
+            model_name="groupmember",
+            name="group",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="memberships",
+                to="groups.Group",
+            ),
         ),
         migrations.AlterField(
-            model_name='groupmember',
-            name='user',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='user_groups', to=settings.AUTH_USER_MODEL),
+            model_name="groupmember",
+            name="user",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="user_groups",
+                to=settings.AUTH_USER_MODEL,
+            ),
         ),
     ]

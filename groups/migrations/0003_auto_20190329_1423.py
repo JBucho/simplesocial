@@ -5,13 +5,10 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('groups', '0002_auto_20190322_1825'),
-    ]
+    dependencies = [("groups", "0002_auto_20190322_1825")]
 
     operations = [
         migrations.AlterModelOptions(
-            name='group',
-            options={'ordering': ['-members__User']},
-        ),
+            name="group", options={"ordering": ["-members__User"]}
+        )
     ]
