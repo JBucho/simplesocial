@@ -23,7 +23,7 @@ class SingleGroup(generic.DetailView):
 
 class ListGroups(generic.ListView):
     model = Group
-
+    paginate_by = 4
 
 class JoinGroup(LoginRequiredMixin, generic.RedirectView):
     def get_redirect_url(self, *args, **kwargs):

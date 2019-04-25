@@ -203,6 +203,12 @@ span.popular > p {
   margin: 0 auto;
   margin-bottom: 10px;
 }
+
+/* User posts list pagination */
+div.col-md-8.postslist > div.pagination {
+  padding-left: 10%;
+}
+
 /* Footer styling */
 #footer {
   display: block;
