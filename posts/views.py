@@ -12,22 +12,24 @@ from . import models
 from . import forms
 
 from django.contrib.auth import get_user_model
+
 User = get_user_model()
 
 # Create your views here.
 class PostList(SelectRelatedMixin, generic.ListView):
     model = models.Post
-    select_related = ('user', 'group')
+    select_related = ("user", "group")
 
 
 class UserPosts(generic.ListView):
     model = models.Post
-    template_name = 'posts/user_post_list.html'
+    template_name = "posts/user_post_list.html"
 
     def get_queryset(self):
         try:
-            self.post_user = User.objects.prefetch_related('posts').get(
-                username__iexact=self.kwargs.get('username'))
+            self.post_user = User.objects.prefetch_related("posts").get(
+                username__iexact=self.kwargs.get("username")
+            )
         except User.DoesNotExist:
             raise Http404
         else:
@@ -35,21 +37,22 @@ class UserPosts(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['post_user'] = self.post_user
+        context["post_user"] = self.post_user
         return context
 
 
 class PostDetail(SelectRelatedMixin, generic.DetailView):
     model = models.Post
-    select_related = ('user', 'group')
+    select_related = ("user", "group")
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        return queryset.filter(user__username__iexact=self.kwargs.get('username'))
+        return queryset.filter(user__username__iexact=self.kwargs.get("username"))
+
 
 class CreatePost(LoginRequiredMixin, SelectRelatedMixin, generic.CreateView):
     model = models.Post
-    fields = ('message', 'group')
+    fields = ("message", "group")
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
@@ -60,38 +63,40 @@ class CreatePost(LoginRequiredMixin, SelectRelatedMixin, generic.CreateView):
 
 class DeletePost(LoginRequiredMixin, SelectRelatedMixin, generic.DeleteView):
     model = models.Post
-    select_related = ('user', 'group')
+    select_related = ("user", "group")
 
     def __init__(self, *args, **kwargs):
-        user = kwargs.pop('user', None)
+        user = kwargs.pop("user", None)
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        return queryset.filter(user_id = self.request.user.id)
+        return queryset.filter(user_id=self.request.user.id)
 
     def get_success_url(self):
         user = self.object.user
-        return reverse_lazy('posts:for_user', kwargs={'username':user})
+        return reverse_lazy("posts:for_user", kwargs={"username": user})
 
     def delete(self, *args, **kwargs):
-        messages.success(self.request, 'Post Deleted')
-        return super().delete(*args,**kwargs)
+        messages.success(self.request, "Post Deleted")
+        return super().delete(*args, **kwargs)
+
 
 # Comments views:
 @login_required
 def add_comment_to_post(request, pk, **kwargs):
     post = get_object_or_404(models.Post, pk=pk)
-    if request.method == 'POST':
+    if request.method == "POST":
         form = forms.CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
             comment.post = post
             comment.author = request.user
             comment.save()
-            return redirect('posts:single', username=post.user, pk=post.pk)
+            return redirect("posts:single", username=post.user, pk=post.pk)
     else:
         form = forms.CommentForm()
-    return render(request, 'posts/comment_form.html',{'form': form})
+    return render(request, "posts/comment_form.html", {"form": form})
+
 
 # @login_required
 # def comment_approve(request, pk):
