@@ -9,7 +9,7 @@
     <span class="post-message">{{ post.message_html|safe}}</span>
     <span class="media-footer text-muted"><time class="time">POSTED:
       <a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">
-      {{ post.created_at | date:'d M Y H:m'}}</a></time>
+      {{ post.created_at | date:'d M Y H:m' }}</a></time>
       IN GROUP: <a href="{% url 'groups:single' slug=post.group.slug %}">
       {{ post.group.name }}</a>
       <span class="post-comments-count">
