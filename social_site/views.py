@@ -1,6 +1,7 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render
 from posts.models import Post
+from social_site.jokes import get_joke_img
 
 class HomePage(TemplateView):
     template_name = "index.html"
@@ -31,3 +32,11 @@ class ThanksPage(TemplateView):
 
 class ConnectFour(TemplateView):
     template_name = 'ConnectFour.html'
+
+class Jokes(TemplateView):
+    template_name = 'jokes.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["joke"] = get_joke_img()
+        return context

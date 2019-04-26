@@ -228,6 +228,21 @@ div.col-md-8.postslist > div.pagination {
   font-size: 1.1em;
   font-weight: 300;
 }
+/* jokes */
+.joke {
+  max-width: 95%;
+  max-height: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+.joke-img img {
+  max-width: 100%;
+}
+
+.joke-btn {
+  margin: 15px;
+}
 /* ---------------- */
 
 .bye-bye-img {
