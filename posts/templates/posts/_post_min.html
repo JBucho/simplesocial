@@ -1,9 +1,11 @@
+{% load utils %}
+
 <div class="post media my-4 jumbotron">
   <div class="media-body">
 
     <a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">
       <span class="post-message">
-        <p>{{ post.message|truncatechars:220 }}</p>
+        <p>{{ post.message|smart_truncate:200 }}</p>
       </span>
     </a>
     <span class="media-footer text-muted"><time class="time">POSTED:
