@@ -1,15 +1,21 @@
+{% load utils %}
+
 <div class="left-bar">
   <h4 style="text-align: center;">POPULAR POSTS:</h4>
   <hr>
 
   {% for post in popular_posts %}
     <div class="jumbotron">
-      <a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{ post.message_html|truncatechars:60|safe }}</a>
-        <hr>
-        <span class="text-muted popular">
-          <p>comments: {{ post.comments.count }}</p>
-          <p>author: {{ post.user.username }}</p>
-        </span>
+      <a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">
+        {{ post.message_html|safe|smart_truncate:80 }}
+      </a>
+
+      <hr>
+
+      <span class="text-muted popular">
+        <p>comments: {{ post.comments.count }}</p>
+        <p>author: {{ post.user.username }}</p>
+      </span>
     </div>
   {% endfor %}
 
