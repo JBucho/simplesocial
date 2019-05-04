@@ -27,5 +27,5 @@ urlpatterns = [
     path('groups/', include('groups.urls', namespace='groups')),
     path('posts/', include('posts.urls', namespace='posts')),
     path('ConnectFour/', views.ConnectFour.as_view(), name='connectfour'),
-    path('jokes/', views.Jokes.as_view(), name='jokes'),
+    path('jokes/', include('jokes.urls', namespace='jokes')),
 ]
